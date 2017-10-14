@@ -33,7 +33,7 @@ describe('<App />', () => {
     expect(wrapper.state().filters).to.deep.equal([]);
   });
 
-  it('should have a state property "currentFilter" iniated to null', () => {
-    expect(wrapper.state().currentFilter).to.deep.equal(null);
-  });
+  // it('should have a state property "currentFilter" iniated to null', () => {
+  //   expect(wrapper.state().currentFilter).to.deep.equal(null);
+  // });
 });

@@ -1,34 +1,63 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+//
+// class Filter extends Component {
+//   // constructor() {
+//   //   super()
+//   //   this.fetchFilters()
+//   //   // super();
+//   //   //
+//   //   // this.state = {
+//   //   //   filters: []
+//   //   // };
+//   // }
+//
+//   componentWillMount() {
+//     this.fetchFilters();
+//   }
+//
+//
+//
+//   render() {
+//     return (
+//       <select onChange={this.props.handleChange} defaultValue='all'>
+//         <option value='all'>All</option>
+//         {this.props.filters.map(filter =>
+//           <option key={filter} value={filter}>{filter}</option>
+//         )}
+//       </select>
+//     );
+//   }
+// }
+//
+// export default Filter;
 
-class Filter extends Component {
-  constructor() {
-    super();
+import React from "react"
 
-    this.state = {
-      filters: []
-    };
-  }
-
-  componentWillMount() {
-    this.fetchFilters();
-  }
-
-  fetchFilters = () => {
-    fetch('/api/fruit_types')
-      .then(response => response.json())
-      .then(filters => this.setState({ filters }));
-  }
-
-  render() {
-    return (
-      <select onChange={this.props.handleChange} defaultValue='all'>
-        <option value='all'>All</option>
-        {this.state.filters.map(filter =>
-          <option key={filter} value={filter}>{filter}</option>
-        )}
+var Filter = (props) => {
+  return(
+    <div>
+      <select onChange={props.handleChange}>
+        <option value="all">All</option>
+        {props.filters.map((filter) => {
+          return  <option value={filter} key={filter}>{filter}</option>})
+        }
       </select>
-    );
-  }
+    </div>
+  )
 }
 
-export default Filter;
+
+
+export default Filter
+
+
+
+
+
+
+
+
+
+
+
+//
